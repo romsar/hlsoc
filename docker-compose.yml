@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16.2
+    restart: always
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST}
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - data:/var/lib/postgresql/data
+  migrate:
+    image: migrate/migrate
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ./postgres/migrations:/postgres/migrations
+    command: [ "-path", "/postgres/migrations", "-database", "postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=disable", "up" ]
+    depends_on:
+      - db
+  serve:
+    build: .
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - "9090:9090"
+    environment:
+      - GRPC_ADDR=:9090
+    depends_on:
+      - db
+      - migrate
+
+volumes:
+  data:
