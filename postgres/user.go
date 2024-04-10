@@ -39,7 +39,7 @@ func (db *DB) CreateUser(ctx context.Context, user *hlsoc.User) error {
 func (db *DB) GetUser(ctx context.Context, filter hlsoc.UserFilter) (*hlsoc.User, error) {
 	filter.Limit = 1
 
-	users, err := db.GetUsers(ctx, filter)
+	users, err := db.SearchUsers(ctx, filter)
 	if err != nil {
 		return nil, err
 	}
@@ -50,11 +50,19 @@ func (db *DB) GetUser(ctx context.Context, filter hlsoc.UserFilter) (*hlsoc.User
 	return users[0], nil
 }
 
-func (db *DB) GetUsers(ctx context.Context, filter hlsoc.UserFilter) ([]*hlsoc.User, error) {
+func (db *DB) SearchUsers(ctx context.Context, filter hlsoc.UserFilter) ([]*hlsoc.User, error) {
 	where, args := []string{"1 = 1"}, pgx.NamedArgs{}
 	if filter.ID != uuid.Nil {
 		where = append(where, "id = @id")
 		args["id"] = filter.ID.String()
+	}
+	if filter.FirstName != "" {
+		where = append(where, "first_name LIKE @firstName")
+		args["firstName"] = filter.FirstName + "%"
+	}
+	if filter.SecondName != "" {
+		where = append(where, "second_name LIKE @secondName")
+		args["secondName"] = filter.SecondName + "%"
 	}
 
 	query := `
@@ -62,6 +70,7 @@ func (db *DB) GetUsers(ctx context.Context, filter hlsoc.UserFilter) ([]*hlsoc.U
 		FROM users
 		WHERE ` + strings.Join(where, " AND ") + `
 		` + FormatLimitOffset(filter.Limit, filter.Offset) + `
+		` + FormatOrderBy(filter.OrderBy) + `
 	`
 
 	rows, err := db.db.QueryContext(ctx, query, args)

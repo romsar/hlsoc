@@ -1,0 +1,15 @@
+Тестирование происходило с помощью утилиты ghz (grpc performance tool):
+ghz --skipTLS localhost:9090 --insecure --call=user.UserService/SearchUsers -m '{"authorization":"<token>"}' -c 100 -n 100 --rps 10 -d '{"first_name":"{{randomString 8}}","second_name":"{{randomString 8}}"}' --async -O html
+
+Результат explain analyse select * from users where first_name LIKE 'Пе%' AND second_name LIKE 'Па%':
+Index Scan using search_idx on users  (cost=0.42..8.46 rows=1 width=86) (actual time=1.559..1.560 rows=0 loops=1)
+  Index Cond: (((first_name)::text ~>=~ 'Пе'::text) AND ((first_name)::text ~<~ 'Пж'::text) AND ((second_name)::text ~>=~ 'Па'::text) AND ((second_name)::text ~<~ 'Пб'::text))
+  Filter: (((first_name)::text ~~ 'Пе%'::text) AND ((second_name)::text ~~ 'Па%'::text))
+Planning Time: 2.622 ms
+Execution Time: 1.633 ms
+
+Обьяснение, почему индекс именно такой:
+Так как мы ищем по префиксам - нам подойдет самый простой b-tree (он поддерживает поиск по префиксам).
+Из-за того, что мы ищем по двум полям одновременно - нужен составной индекс на имя и фамилию человека.
+Если в базе данных хранятся значения не в стандартной "C" локали,
+для поддержки оператора LIKE в Postgres необходимо указать класс оператора - я использовал varchar_pattern_ops.

@@ -26,8 +26,10 @@ const (
 )
 
 type UserFilter struct {
-	ID            uuid.UUID
-	Limit, Offset int
+	ID                    uuid.UUID
+	FirstName, SecondName string
+	OrderBy               string
+	Limit, Offset         int
 }
 
 var ErrUserNotFound = errors.New("user not found")
@@ -35,6 +37,7 @@ var ErrUserNotFound = errors.New("user not found")
 type UserRepository interface {
 	CreateUser(ctx context.Context, user *User) error
 	GetUser(ctx context.Context, filter UserFilter) (*User, error)
+	SearchUsers(ctx context.Context, filter UserFilter) ([]*User, error)
 }
 
 type PasswordHasher interface {

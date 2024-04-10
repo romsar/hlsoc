@@ -15,7 +15,7 @@ import (
 var _ grpcgen.UserServiceServer = (*Server)(nil)
 
 func init() {
-	authMethods = append(authMethods, "GetUser")
+	authMethods = append(authMethods, "GetUser", "SearchUsers")
 }
 
 func (s *Server) Login(ctx context.Context, req *grpcgen.LoginRequest) (*grpcgen.LoginResponse, error) {
@@ -89,6 +89,25 @@ func (s *Server) GetUser(ctx context.Context, req *grpcgen.GetUserRequest) (*grp
 	}
 
 	return &grpcgen.GetUserResponse{User: userToProto(user)}, nil
+}
+
+func (s *Server) SearchUsers(ctx context.Context, req *grpcgen.SearchUserRequest) (*grpcgen.SearchUserResponse, error) {
+	users, err := s.userRepository.SearchUsers(ctx, hlsoc.UserFilter{
+		FirstName:  req.GetFirstName(),
+		SecondName: req.GetSecondName(),
+		OrderBy:    "id",
+	})
+	if err != nil {
+		slog.Error(err.Error())
+		return nil, status.Error(codes.Internal, "internal server error")
+	}
+
+	usersProto := make([]*grpcgen.User, len(users))
+	for i := range users {
+		usersProto[i] = userToProto(users[i])
+	}
+
+	return &grpcgen.SearchUserResponse{Users: usersProto}, nil
 }
 
 func userToProto(user *hlsoc.User) *grpcgen.User {

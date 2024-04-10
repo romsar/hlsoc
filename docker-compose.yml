@@ -11,6 +11,7 @@ services:
       - DATABASE_HOST=${DB_HOST}
     ports:
       - "${DB_PORT}:${DB_PORT}"
+    command: -c 'max_connections=1000'
     volumes:
       - data:/var/lib/postgresql/data
   migrate:

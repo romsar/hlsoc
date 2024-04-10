@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/jackc/pgx/v5/stdlib"
+	"time"
 )
 
 type DB struct {
@@ -15,6 +16,9 @@ func Open(dsn string) (*DB, error) {
 	if err != nil {
 		return nil, fmt.Errorf("unnable to connect to pg: %w", err)
 	}
+
+	db.SetConnMaxLifetime(time.Minute * 3)
+	db.SetMaxOpenConns(0)
 
 	return &DB{db: db}, nil
 }
@@ -30,6 +34,13 @@ func FormatLimitOffset(limit, offset int) string {
 		return fmt.Sprintf(`LIMIT %d`, limit)
 	} else if offset > 0 {
 		return fmt.Sprintf(`OFFSET %d`, offset)
+	}
+	return ""
+}
+
+func FormatOrderBy(column string) string {
+	if column != "" {
+		return fmt.Sprintf(`ORDER BY %s`, column)
 	}
 	return ""
 }

@@ -1,0 +1,414 @@
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ghz</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@4.5.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/britecharts@3/dist/bundled/britecharts.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/britecharts@3/dist/css/britecharts.min.css" type="text/css" /></head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+
+</head>
+
+<body>
+
+<section class="section">
+
+    <div class="container">
+
+
+        <h2 class="subtitle">Wed Apr 10 2024 @ 10:11:10</h2>
+
+    </div>
+    <br />
+
+    <div class="container">
+        <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="#summary">
+              <span class="icon is-small">
+                <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+              </span>
+                        <span>Summary</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#histogram">
+              <span class="icon is-small">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+              </span>
+                        <span>Histogram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#latency">
+              <span class="icon is-small">
+                <i class="far fa-clock" aria-hidden="true"></i>
+              </span>
+                        <span>Latency Distribution</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#status">
+              <span class="icon is-small">
+                <i class="far fa-check-square" aria-hidden="true"></i>
+              </span>
+                        <span>Status Distribution</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#data">
+              <span class="icon is-small">
+                <i class="far fa-file-alt" aria-hidden="true"></i>
+              </span>
+                        <span>Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#options">
+              <span class="icon is-small">
+                <i class="fas fa-cog" aria-hidden="true"></i>
+              </span>
+                        <span>Options</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <hr />
+    </div>
+
+
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-narrow">
+                <div class="content">
+                    <a name="summary">
+                        <h3>Summary</h3>
+                    </a>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <th>Count</th>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <th>Total</th>
+                            <td>10.07 s</td>
+                        </tr>
+                        <tr>
+                            <th>Slowest</th>
+                            <td>74.73 ms</td>
+                        </tr>
+                        <tr>
+                            <th>Fastest</th>
+                            <td>36.89 ms</td>
+                        </tr>
+                        <tr>
+                            <th>Average</th>
+                            <td>48.40 ms</td>
+                        </tr>
+                        <tr>
+                            <th>Requests / sec</th>
+                            <td>9.93</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="container">
+        <div class="content">
+            <a name="histogram">
+                <h3>Histogram</h3>
+            </a>
+            <p>
+            <div class="js-bar-container"></div>
+            </p>
+        </div>
+    </div>
+
+    <br />
+    <div class="container">
+        <div class="content">
+            <a name="latency">
+                <h3>Latency distribution</h3>
+            </a>
+            <table class="table is-fullwidth">
+                <thead>
+                <tr>
+
+                    <th>10 %</th>
+
+                    <th>25 %</th>
+
+                    <th>50 %</th>
+
+                    <th>75 %</th>
+
+                    <th>90 %</th>
+
+                    <th>95 %</th>
+
+                    <th>99 %</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+
+                    <td>43.23 ms</td>
+
+                    <td>44.15 ms</td>
+
+                    <td>45.16 ms</td>
+
+                    <td>48.06 ms</td>
+
+                    <td>59.44 ms</td>
+
+                    <td>66.98 ms</td>
+
+                    <td>71.78 ms</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <br />
+    <div class="container">
+        <div class="columns">
+            <div class="column is-narrow">
+                <div class="content">
+                    <a name="status">
+                        <h3>Status distribution</h3>
+                    </a>
+                    <table class="table is-hoverable">
+                        <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Count</th>
+                            <th>% of Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td>OK</td>
+                            <td>100</td>
+                            <td>100.00 %</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br />
+    <div class="container">
+        <div class="columns">
+            <div class="column is-narrow">
+                <div class="content">
+                    <a name="data">
+                        <h3>Data</h3>
+                    </a>
+
+                    <a class="button" id="dlJSON">JSON</a>
+                    <a class="button" id="dlCSV">CSV</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="container">
+        <div class="content">
+            <a name="options">
+                <h3>Options</h3>
+            </a>
+            <article class="message">
+                <div class="message-body">
+							<pre style="background-color: transparent;">{
+  "call": "user.UserService/SearchUsers",
+  "host": "localhost:9090",
+  "skipTLS": true,
+  "insecure": true,
+  "rps": 10,
+  "load-schedule": "const",
+  "load-start": 0,
+  "load-end": 0,
+  "load-step": 0,
+  "load-step-duration": 0,
+  "load-max-duration": 0,
+  "concurrency": 10,
+  "concurrency-schedule": "const",
+  "concurrency-start": 0,
+  "concurrency-end": 0,
+  "concurrency-step": 1,
+  "concurrency-step-duration": 0,
+  "concurrency-max-duration": 0,
+  "total": 100,
+  "async": true,
+  "connections": 1,
+  "timeout": 20000000000,
+  "dial-timeout": 10000000000,
+  "data": {
+    "first_name": "{{randomString 8}}",
+    "second_name": "{{randomString 8}}"
+  },
+  "binary": false,
+  "metadata": {
+    "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTUxMTAxMDAsInVzZXJfaWQiOiI5OTg4ZTdmZi04YmU5LTRlNTgtODYzOC00NDZjMzAzYjBlNGMifQ.7MsiHXle9LCyI_OzUVO0mRYihlmqBfVaRMQIMF5blMY"
+  },
+  "CPUs": 12
+}</pre>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr />
+        <div class="content has-text-centered">
+            <p>
+                Generated by <strong>ghz</strong>
+            </p>
+            <a href="https://github.com/bojand/ghz"><i class="icon is-medium fab fa-github"></i></a>
+        </div>
+    </div>
+
+</section>
+
+</body>
+
+<script>
+
+    const count = 100;
+
+    const rawData = [{"timestamp":"2024-04-10T10:11:00.190786+03:00","latency":53234149,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.272578+03:00","latency":36889811,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.373271+03:00","latency":38234036,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.480689+03:00","latency":45422948,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.579938+03:00","latency":44233606,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.683429+03:00","latency":47161803,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.793469+03:00","latency":58254255,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.878614+03:00","latency":43456658,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:00.980084+03:00","latency":44284035,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.084239+03:00","latency":48454303,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.179675+03:00","latency":44157885,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.279748+03:00","latency":44536687,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.378711+03:00","latency":43580331,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.478616+03:00","latency":42873877,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.578524+03:00","latency":43152355,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.679815+03:00","latency":43703993,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.782472+03:00","latency":46341416,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.881828+03:00","latency":46065049,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:01.980626+03:00","latency":44406439,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.079256+03:00","latency":43705391,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.181664+03:00","latency":45950381,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.27884+03:00","latency":42975644,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.382632+03:00","latency":46535021,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.478102+03:00","latency":42383372,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.587615+03:00","latency":52141583,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.681574+03:00","latency":45818181,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.780323+03:00","latency":44897599,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.879312+03:00","latency":44158197,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:02.980799+03:00","latency":45391286,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.082903+03:00","latency":47057436,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.179951+03:00","latency":44502412,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.279459+03:00","latency":44153640,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.380642+03:00","latency":44675397,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.479776+03:00","latency":44107478,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.579524+03:00","latency":44155203,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.678426+03:00","latency":43229429,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.785353+03:00","latency":49821438,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.882095+03:00","latency":45824162,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:03.980903+03:00","latency":45392364,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.080665+03:00","latency":44810827,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.182644+03:00","latency":46969680,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.279615+03:00","latency":43895532,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.379767+03:00","latency":44335276,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.481188+03:00","latency":45843012,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.579553+03:00","latency":44183171,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.679549+03:00","latency":44061832,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.779157+03:00","latency":43613125,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.878584+03:00","latency":43443414,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:04.980237+03:00","latency":44736838,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.082725+03:00","latency":47389858,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.180388+03:00","latency":45124063,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.279587+03:00","latency":44630982,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.381128+03:00","latency":44806062,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.478638+03:00","latency":43119424,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.583624+03:00","latency":48056518,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.678966+03:00","latency":43748842,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.780474+03:00","latency":44569651,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.880909+03:00","latency":45267905,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:05.981003+03:00","latency":45117514,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.080936+03:00","latency":45200934,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.179754+03:00","latency":44550337,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.281046+03:00","latency":45492909,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.379932+03:00","latency":44911616,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.476723+03:00","latency":41347379,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.584777+03:00","latency":49699210,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.682879+03:00","latency":47029537,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.78245+03:00","latency":45216995,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.878747+03:00","latency":43518949,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:06.97398+03:00","latency":39039973,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.079029+03:00","latency":43544688,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.181208+03:00","latency":45749703,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.280526+03:00","latency":45502495,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.381206+03:00","latency":46214771,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.483327+03:00","latency":47619742,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.57957+03:00","latency":44016575,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.679747+03:00","latency":43975449,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.780045+03:00","latency":44690517,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.880547+03:00","latency":45048881,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:07.979701+03:00","latency":44184270,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.083903+03:00","latency":48231868,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.18062+03:00","latency":45156506,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.282578+03:00","latency":46933976,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.396595+03:00","latency":60990678,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.502653+03:00","latency":67606516,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.596836+03:00","latency":61325898,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.694648+03:00","latency":59233203,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.795077+03:00","latency":59403581,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.894952+03:00","latency":59663635,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:08.993523+03:00","latency":58121983,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.09465+03:00","latency":58855827,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.202188+03:00","latency":66756525,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.304811+03:00","latency":69910930,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.405081+03:00","latency":69833314,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.495169+03:00","latency":59438781,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.594068+03:00","latency":58825598,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.709739+03:00","latency":74725384,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.806628+03:00","latency":71783092,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.893121+03:00","latency":57855582,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:09.993902+03:00","latency":58797912,"error":"","status":"OK"},{"timestamp":"2024-04-10T10:11:10.102713+03:00","latency":66978687,"error":"","status":"OK"}];
+
+    const data = [
+
+        { name: '36.89 ms', value: 1 },
+
+        { name: '40.67 ms', value: 2 },
+
+        { name: '44.46 ms', value: 31 },
+
+        { name: '48.24 ms', value: 42 },
+
+        { name: '52.02 ms', value: 3 },
+
+        { name: '55.81 ms', value: 2 },
+
+        { name: '59.59 ms', value: 9 },
+
+        { name: '63.37 ms', value: 3 },
+
+        { name: '67.16 ms', value: 2 },
+
+        { name: '70.94 ms', value: 3 },
+
+        { name: '74.73 ms', value: 2 },
+
+    ];
+
+    function createHorizontalBarChart() {
+        let barChart = britecharts.bar(),
+            tooltip = britecharts.miniTooltip(),
+            barContainer = d3.select('.js-bar-container'),
+            containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false,
+            tooltipContainer,
+            dataset;
+
+        if (containerWidth) {
+            dataset = data;
+            barChart
+                .isHorizontal(true)
+                .isAnimated(true)
+                .margin({
+                    left: 100,
+                    right: 20,
+                    top: 20,
+                    bottom: 20
+                })
+                .colorSchema(britecharts.colors.colorSchemas.teal)
+                .width(containerWidth)
+                .yAxisPaddingBetweenChart(20)
+                .height(400)
+                // .hasPercentage(true)
+                .enableLabels(true)
+                .labelsNumberFormat('')
+                .percentageAxisToMaxRatio(1.3)
+                .on('customMouseOver', tooltip.show)
+                .on('customMouseMove', tooltip.update)
+                .on('customMouseOut', tooltip.hide);
+
+            barChart.orderingFunction(function(a, b) {
+                var nA = a.name.replace(/ms/gi, '');
+                var nB = b.name.replace(/ms/gi, '');
+
+                var vA = Number.parseFloat(nA);
+                var vB = Number.parseFloat(nB);
+
+                return vB - vA;
+            })
+
+            barContainer.datum(dataset).call(barChart);
+
+            tooltipContainer = d3.select('.js-bar-container .bar-chart .metadata-group');
+            tooltipContainer.datum([]).call(tooltip);
+        }
+    }
+
+    function setJSONDownloadLink () {
+        var filename = "data.json";
+        var btn = document.getElementById('dlJSON');
+        var jsonData = JSON.stringify(rawData)
+        var blob = new Blob([jsonData], { type: 'text/json;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        btn.setAttribute("href", url);
+        btn.setAttribute("download", filename);
+    }
+
+    function setCSVDownloadLink () {
+        var filename = "data.csv";
+        var btn = document.getElementById('dlCSV');
+        var csv = Papa.unparse(rawData)
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var url = URL.createObjectURL(blob);
+        btn.setAttribute("href", url);
+        btn.setAttribute("download", filename);
+    }
+
+    createHorizontalBarChart();
+
+    setJSONDownloadLink();
+
+    setCSVDownloadLink();
+
+</script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+</html>
