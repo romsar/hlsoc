@@ -50,6 +50,7 @@ func run() error {
 		if err != nil {
 			return err
 		}
+
 		errWg.Go(func() error {
 			<-ctx.Done()
 

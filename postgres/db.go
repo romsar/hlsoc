@@ -12,13 +12,10 @@ type DB struct {
 }
 
 func Open(dsn string) (*DB, error) {
-	db, err := sql.Open("pgx", dsn)
+	db, err := openConnection(dsn)
 	if err != nil {
-		return nil, fmt.Errorf("unnable to connect to pg: %w", err)
+		return nil, fmt.Errorf("cannot open connection for master db with dsn %s: %w", dsn, err)
 	}
-
-	db.SetConnMaxLifetime(time.Minute * 3)
-	db.SetMaxOpenConns(0)
 
 	return &DB{db: db}, nil
 }
@@ -27,20 +24,14 @@ func (db *DB) Close() error {
 	return db.Close()
 }
 
-func FormatLimitOffset(limit, offset int) string {
-	if limit > 0 && offset > 0 {
-		return fmt.Sprintf(`LIMIT %d OFFSET %d`, limit, offset)
-	} else if limit > 0 {
-		return fmt.Sprintf(`LIMIT %d`, limit)
-	} else if offset > 0 {
-		return fmt.Sprintf(`OFFSET %d`, offset)
+func openConnection(dsn string) (*sql.DB, error) {
+	db, err := sql.Open("pgx", dsn)
+	if err != nil {
+		return nil, fmt.Errorf("unnable to connect to pg: %w", err)
 	}
-	return ""
-}
 
-func FormatOrderBy(column string) string {
-	if column != "" {
-		return fmt.Sprintf(`ORDER BY %s`, column)
-	}
-	return ""
+	db.SetConnMaxLifetime(time.Minute * 3)
+	db.SetMaxOpenConns(0)
+
+	return db, nil
 }
