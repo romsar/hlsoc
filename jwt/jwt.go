@@ -3,6 +3,7 @@ package jwt
 import (
 	"fmt"
 	"github.com/golang-jwt/jwt/v5"
+	"github.com/google/uuid"
 	"github.com/romsar/hlsoc"
 	"time"
 )
@@ -16,17 +17,15 @@ func New(secret string) *Tokenizer {
 }
 
 type UserClaims struct {
+	UserID string `json:"user_id"`
 	jwt.RegisteredClaims
-	hlsoc.UserClaims
 }
 
 func (t *Tokenizer) CreateToken(user *hlsoc.User, duration time.Duration) (string, error) {
 	claims := UserClaims{
+		UserID: user.ID.String(),
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(time.Now().Add(duration)),
-		},
-		UserClaims: hlsoc.UserClaims{
-			UserID: user.ID.String(),
 		},
 	}
 
@@ -40,7 +39,7 @@ func (t *Tokenizer) CreateToken(user *hlsoc.User, duration time.Duration) (strin
 	return tokenStr, nil
 }
 
-func (t *Tokenizer) Verify(accessToken string) (hlsoc.UserClaims, error) {
+func (t *Tokenizer) Verify(accessToken string) (*hlsoc.User, error) {
 	token, err := jwt.ParseWithClaims(
 		accessToken,
 		&UserClaims{},
@@ -55,13 +54,18 @@ func (t *Tokenizer) Verify(accessToken string) (hlsoc.UserClaims, error) {
 	)
 
 	if err != nil {
-		return hlsoc.UserClaims{}, fmt.Errorf("invalid token: %w", err)
+		return nil, fmt.Errorf("invalid token: %w", err)
 	}
 
 	claims, ok := token.Claims.(*UserClaims)
 	if !ok {
-		return hlsoc.UserClaims{}, fmt.Errorf("invalid token claims")
+		return nil, fmt.Errorf("invalid token claims")
 	}
 
-	return claims.UserClaims, nil
+	userID, err := uuid.Parse(claims.UserID)
+	if err != nil {
+		return nil, fmt.Errorf("parse uuid %s err: %w", claims.UserID, err)
+	}
+
+	return &hlsoc.User{ID: userID}, nil
 }

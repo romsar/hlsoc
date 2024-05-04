@@ -17,8 +17,10 @@ type Server struct {
 	tokenizer      hlsoc.Tokenizer
 	userRepository hlsoc.UserRepository
 	passwordHasher hlsoc.PasswordHasher
+	postRepository hlsoc.PostRepository
 
 	grpcgen.UnimplementedUserServiceServer
+	grpcgen.UnimplementedPostServiceServer
 }
 
 type Option func(s *Server)
@@ -41,6 +43,12 @@ func WithPasswordHasher(ph hlsoc.PasswordHasher) Option {
 	}
 }
 
+func WithPostRepository(repo hlsoc.PostRepository) Option {
+	return func(s *Server) {
+		s.postRepository = repo
+	}
+}
+
 func New(addr string, opts ...Option) *Server {
 	s := &Server{addr: addr}
 	s.s = grpc.NewServer(grpc.ChainUnaryInterceptor(s.loggingInterceptor, s.authInterceptor))
@@ -50,7 +58,11 @@ func New(addr string, opts ...Option) *Server {
 	}
 
 	reflection.Register(s.s)
-	grpcgen.RegisterUserServiceServer(s.s, s)
+
+	{
+		grpcgen.RegisterUserServiceServer(s.s, s)
+		grpcgen.RegisterPostServiceServer(s.s, s)
+	}
 
 	return s
 }

@@ -69,9 +69,8 @@ func (db *DB) SearchUsers(ctx context.Context, filter hlsoc.UserFilter) ([]*hlso
 		SELECT id, password, first_name, second_name, birth_date, gender, biography, city 
 		FROM users
 		WHERE ` + strings.Join(where, " AND ") + `
-		` + FormatLimitOffset(filter.Limit, filter.Offset) + `
-		` + FormatOrderBy(filter.OrderBy) + `
-	`
+		` + FormatOrderBy(filter.OrderBy, "ASC") + `
+		` + FormatLimitOffset(filter.Limit, filter.Offset)
 
 	rows, err := db.db.QueryContext(ctx, query, args)
 	if err != nil {
@@ -100,4 +99,35 @@ func (db *DB) SearchUsers(ctx context.Context, filter hlsoc.UserFilter) ([]*hlso
 	}
 
 	return users, nil
+}
+
+func (db *DB) GetFriends(ctx context.Context, userID uuid.UUID) ([]uuid.UUID, error) {
+	args := pgx.NamedArgs{
+		"userId": userID.String(),
+	}
+
+	query := `
+		SELECT friend_id
+		FROM user_friends
+		WHERE user_id = @userId
+	`
+
+	rows, err := db.db.QueryContext(ctx, query, args)
+	if err != nil {
+		return nil, fmt.Errorf("unable to query user friends: %w", err)
+	}
+	defer rows.Close()
+
+	var friends []uuid.UUID
+	for rows.Next() {
+		var friendID string
+		err = rows.Scan(&friendID)
+		if err != nil {
+			return nil, fmt.Errorf("unable to scan row: %w", err)
+		}
+
+		friends = append(friends, uuid.MustParse(friendID))
+	}
+
+	return friends, nil
 }

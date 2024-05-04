@@ -3,19 +3,15 @@ package postgres
 import "fmt"
 
 func FormatLimitOffset(limit, offset int) string {
-	if limit > 0 && offset > 0 {
+	if offset > 0 {
 		return fmt.Sprintf(`LIMIT %d OFFSET %d`, limit, offset)
-	} else if limit > 0 {
-		return fmt.Sprintf(`LIMIT %d`, limit)
-	} else if offset > 0 {
-		return fmt.Sprintf(`OFFSET %d`, offset)
 	}
-	return ""
+	return fmt.Sprintf(`LIMIT %d`, limit)
 }
 
-func FormatOrderBy(column string) string {
+func FormatOrderBy(column string, direction string) string {
 	if column != "" {
-		return fmt.Sprintf(`ORDER BY %s`, column)
+		return fmt.Sprintf(`ORDER BY %s %s`, column, direction)
 	}
 	return ""
 }

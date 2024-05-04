@@ -8,6 +8,7 @@ import (
 	"github.com/romsar/hlsoc/grpc"
 	"github.com/romsar/hlsoc/jwt"
 	"github.com/romsar/hlsoc/postgres"
+	"github.com/romsar/hlsoc/redis"
 	"golang.org/x/sync/errgroup"
 	"log/slog"
 	"os"
@@ -36,6 +37,7 @@ func run() error {
 
 	var tokenizer hlsoc.Tokenizer
 	var userRepository hlsoc.UserRepository
+	var postRepository hlsoc.PostRepository
 	var passwordHasher hlsoc.PasswordHasher
 
 	// jwt
@@ -59,6 +61,32 @@ func run() error {
 		})
 
 		userRepository = db
+		postRepository = db
+	}
+
+	// redis
+	{
+		slog.Info("opening redis connection")
+
+		var red *redis.Client
+		red, err = redis.New(
+			cfg.Redis.Addr,
+			cfg.Redis.Password,
+			redis.WithUserRepository(userRepository),
+			redis.WithPostRepository(postRepository),
+		)
+		if err != nil {
+			return err
+		}
+
+		errWg.Go(func() error {
+			<-ctx.Done()
+
+			slog.Info("terminating redis connection")
+			return red.Close()
+		})
+
+		postRepository = red
 	}
 
 	// bcrypt
@@ -73,6 +101,7 @@ func run() error {
 			grpc.WithTokenizer(tokenizer),
 			grpc.WithUserRepository(userRepository),
 			grpc.WithPasswordHasher(passwordHasher),
+			grpc.WithPostRepository(postRepository),
 		}
 
 		s := grpc.New(cfg.GRPC.Addr, opts...)
@@ -115,6 +144,7 @@ type Config struct {
 	JWT      JWTConfig      `envPrefix:"JWT_"`
 	GRPC     GRPCConfig     `envPrefix:"GRPC_"`
 	Postgres PostgresConfig `envPrefix:"PG_"`
+	Redis    RedisConfig    `envPrefix:"REDIS_"`
 }
 
 type JWTConfig struct {
@@ -127,4 +157,9 @@ type GRPCConfig struct {
 
 type PostgresConfig struct {
 	DSN string `env:"DSN,required"`
+}
+
+type RedisConfig struct {
+	Addr     string `env:"ADDR,required"`
+	Password string `env:"PASSWORD,required"`
 }

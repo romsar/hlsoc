@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package user;
+
+import "google/type/date.proto";
+
+option go_package = "github.com/romsar/hlsoc/grpc/gen;grpcgen";
+
+service PostService {
+  rpc GetFeed(GetFeedRequest) returns (GetFeedResponse);
+  rpc CreatePost(CreatePostRequest) returns (CreatePostResponse);
+}
+
+message GetFeedRequest {
+  int64 limit = 1;
+  int64 offset = 2;
+}
+
+message GetFeedResponse {
+  repeated Post posts = 1;
+}
+
+message CreatePostRequest {
+  string text = 1;
+}
+
+message CreatePostResponse {
+  Post post = 1;
+}
+
+message Post {
+  string id = 1;
+  string text = 2;
+  string created_by = 3;
+  google.type.Date created_at = 4;
+}

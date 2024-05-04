@@ -2,6 +2,7 @@ package grpc
 
 import (
 	"context"
+	"github.com/romsar/hlsoc"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
@@ -31,26 +32,29 @@ func (s *Server) authInterceptor(
 			return nil, errMissingMetadata
 		}
 
-		if !s.valid(md["authorization"]) {
+		user, valid := s.valid(md["authorization"])
+		if !valid {
 			return nil, errInvalidToken
 		}
+
+		ctx = context.WithValue(ctx, "user", user)
 	}
 
 	return handler(ctx, req)
 }
 
-func (s *Server) valid(authorization []string) bool {
+func (s *Server) valid(authorization []string) (*hlsoc.User, bool) {
 	if len(authorization) < 1 {
-		return false
+		return nil, false
 	}
 
 	token := strings.TrimPrefix(authorization[0], "Bearer ")
 
-	_, err := s.tokenizer.Verify(token)
+	user, err := s.tokenizer.Verify(token)
 	if err != nil {
 		slog.Error(err.Error())
-		return false
+		return nil, false
 	}
 
-	return true
+	return user, true
 }

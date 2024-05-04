@@ -110,6 +110,14 @@ services:
     depends_on:
       - pgpool
       - migrate
+  redis:
+    image: docker.io/bitnami/redis:7.2
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis_data:/bitnami/redis/data'
 
 volumes:
   pg_0_data:
@@ -117,4 +125,6 @@ volumes:
   pg_1_data:
     driver: local
   pg_2_data:
+    driver: local
+  redis_data:
     driver: local
