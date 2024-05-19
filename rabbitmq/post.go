@@ -21,22 +21,9 @@ func (c *Client) ProduceNewPost(ctx context.Context, userID uuid.UUID, post *hls
 		return fmt.Errorf("marshal json post: %w", err)
 	}
 
-	err = ch.ExchangeDeclare(
-		"new-post",
-		"direct",
-		true,
-		false,
-		false,
-		false,
-		nil,
-	)
-	if err != nil {
-		return fmt.Errorf("decrale exchange: %w", err)
-	}
-
 	err = ch.PublishWithContext(ctx,
-		"new-post",
-		"user."+userID.String(),
+		"",
+		fmt.Sprintf("user.%s.new-post", userID),
 		false,
 		false,
 		amqp.Publishing{
@@ -57,40 +44,16 @@ func (c *Client) ConsumeNewPost(ctx context.Context, userID uuid.UUID, f func(po
 		return fmt.Errorf("open channel: %w", err)
 	}
 
-	err = ch.ExchangeDeclare(
-		"new-post",
-		"direct",
-		true,
-		false,
-		false,
-		false,
-		nil,
-	)
-	if err != nil {
-		return fmt.Errorf("decrale exchange: %w", err)
-	}
-
 	q, err := ch.QueueDeclare(
-		"",
+		fmt.Sprintf("user.%s.new-post", userID),
 		false,
-		false,
+		true,
 		true,
 		false,
 		nil,
 	)
 	if err != nil {
 		return fmt.Errorf("decrale queue: %w", err)
-	}
-
-	err = ch.QueueBind(
-		q.Name,
-		"user."+userID.String(),
-		"new-post",
-		false,
-		nil,
-	)
-	if err != nil {
-		return fmt.Errorf("queue bind: %w", err)
 	}
 
 	msgCh, err := ch.Consume(
