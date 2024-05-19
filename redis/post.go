@@ -55,7 +55,21 @@ func (c *Client) CreatePost(ctx context.Context, post *hlsoc.Post) error {
 		friendID := friendID
 
 		errWg.Go(func() error {
-			return c.refreshFeedForUser(ctx, friendID)
+			err := c.refreshFeedForUser(ctx, friendID)
+			if err != nil {
+				return fmt.Errorf("refresh feed for user: %w", err)
+			}
+			return nil
+		})
+
+		errWg.Go(func() error {
+			// это не очень хорошо что кеширующий слой занимается отправкой событий,
+			// но у меня нет времени нефакторить
+			err := c.postBroker.ProduceNewPost(ctx, friendID, post)
+			if err != nil {
+				return fmt.Errorf("produce new post: %w", err)
+			}
+			return nil
 		})
 	}
 

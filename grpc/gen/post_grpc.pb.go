@@ -23,6 +23,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PostServiceClient interface {
 	GetFeed(ctx context.Context, in *GetFeedRequest, opts ...grpc.CallOption) (*GetFeedResponse, error)
+	StreamFeed(ctx context.Context, in *StreamFeedRequest, opts ...grpc.CallOption) (PostService_StreamFeedClient, error)
 	CreatePost(ctx context.Context, in *CreatePostRequest, opts ...grpc.CallOption) (*CreatePostResponse, error)
 }
 
@@ -43,6 +44,38 @@ func (c *postServiceClient) GetFeed(ctx context.Context, in *GetFeedRequest, opt
 	return out, nil
 }
 
+func (c *postServiceClient) StreamFeed(ctx context.Context, in *StreamFeedRequest, opts ...grpc.CallOption) (PostService_StreamFeedClient, error) {
+	stream, err := c.cc.NewStream(ctx, &PostService_ServiceDesc.Streams[0], "/user.PostService/StreamFeed", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &postServiceStreamFeedClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type PostService_StreamFeedClient interface {
+	Recv() (*Post, error)
+	grpc.ClientStream
+}
+
+type postServiceStreamFeedClient struct {
+	grpc.ClientStream
+}
+
+func (x *postServiceStreamFeedClient) Recv() (*Post, error) {
+	m := new(Post)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 func (c *postServiceClient) CreatePost(ctx context.Context, in *CreatePostRequest, opts ...grpc.CallOption) (*CreatePostResponse, error) {
 	out := new(CreatePostResponse)
 	err := c.cc.Invoke(ctx, "/user.PostService/CreatePost", in, out, opts...)
@@ -57,6 +90,7 @@ func (c *postServiceClient) CreatePost(ctx context.Context, in *CreatePostReques
 // for forward compatibility
 type PostServiceServer interface {
 	GetFeed(context.Context, *GetFeedRequest) (*GetFeedResponse, error)
+	StreamFeed(*StreamFeedRequest, PostService_StreamFeedServer) error
 	CreatePost(context.Context, *CreatePostRequest) (*CreatePostResponse, error)
 	mustEmbedUnimplementedPostServiceServer()
 }
@@ -67,6 +101,9 @@ type UnimplementedPostServiceServer struct {
 
 func (UnimplementedPostServiceServer) GetFeed(context.Context, *GetFeedRequest) (*GetFeedResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFeed not implemented")
+}
+func (UnimplementedPostServiceServer) StreamFeed(*StreamFeedRequest, PostService_StreamFeedServer) error {
+	return status.Errorf(codes.Unimplemented, "method StreamFeed not implemented")
 }
 func (UnimplementedPostServiceServer) CreatePost(context.Context, *CreatePostRequest) (*CreatePostResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreatePost not implemented")
@@ -100,6 +137,27 @@ func _PostService_GetFeed_Handler(srv interface{}, ctx context.Context, dec func
 		return srv.(PostServiceServer).GetFeed(ctx, req.(*GetFeedRequest))
 	}
 	return interceptor(ctx, in, info, handler)
+}
+
+func _PostService_StreamFeed_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamFeedRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(PostServiceServer).StreamFeed(m, &postServiceStreamFeedServer{stream})
+}
+
+type PostService_StreamFeedServer interface {
+	Send(*Post) error
+	grpc.ServerStream
+}
+
+type postServiceStreamFeedServer struct {
+	grpc.ServerStream
+}
+
+func (x *postServiceStreamFeedServer) Send(m *Post) error {
+	return x.ServerStream.SendMsg(m)
 }
 
 func _PostService_CreatePost_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -136,6 +194,12 @@ var PostService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _PostService_CreatePost_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "StreamFeed",
+			Handler:       _PostService_StreamFeed_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "post.proto",
 }

@@ -8,6 +8,7 @@ import (
 	"github.com/romsar/hlsoc/grpc"
 	"github.com/romsar/hlsoc/jwt"
 	"github.com/romsar/hlsoc/postgres"
+	"github.com/romsar/hlsoc/rabbitmq"
 	"github.com/romsar/hlsoc/redis"
 	"golang.org/x/sync/errgroup"
 	"log/slog"
@@ -38,6 +39,7 @@ func run() error {
 	var tokenizer hlsoc.Tokenizer
 	var userRepository hlsoc.UserRepository
 	var postRepository hlsoc.PostRepository
+	var postBroker hlsoc.PostBroker
 	var passwordHasher hlsoc.PasswordHasher
 
 	// jwt
@@ -64,6 +66,28 @@ func run() error {
 		postRepository = db
 	}
 
+	// rabbitmq
+	{
+		slog.Info("opening rabbitmq connection")
+
+		var rab *rabbitmq.Client
+		rab, err = rabbitmq.New(
+			cfg.AMQP.Addr,
+		)
+		if err != nil {
+			return err
+		}
+
+		errWg.Go(func() error {
+			<-ctx.Done()
+
+			slog.Info("terminating rabbitmq connection")
+			return rab.Close()
+		})
+
+		postBroker = rab
+	}
+
 	// redis
 	{
 		slog.Info("opening redis connection")
@@ -74,6 +98,7 @@ func run() error {
 			cfg.Redis.Password,
 			redis.WithUserRepository(userRepository),
 			redis.WithPostRepository(postRepository),
+			redis.WithPostBroker(postBroker),
 		)
 		if err != nil {
 			return err
@@ -102,6 +127,7 @@ func run() error {
 			grpc.WithUserRepository(userRepository),
 			grpc.WithPasswordHasher(passwordHasher),
 			grpc.WithPostRepository(postRepository),
+			grpc.WithPostBroker(postBroker),
 		}
 
 		s := grpc.New(cfg.GRPC.Addr, opts...)
@@ -145,6 +171,7 @@ type Config struct {
 	GRPC     GRPCConfig     `envPrefix:"GRPC_"`
 	Postgres PostgresConfig `envPrefix:"PG_"`
 	Redis    RedisConfig    `envPrefix:"REDIS_"`
+	AMQP     AMQPConfig     `envPrefix:"AMQP_"`
 }
 
 type JWTConfig struct {
@@ -162,4 +189,8 @@ type PostgresConfig struct {
 type RedisConfig struct {
 	Addr     string `env:"ADDR,required"`
 	Password string `env:"PASSWORD,required"`
+}
+
+type AMQPConfig struct {
+	Addr string `env:"ADDR,required"`
 }

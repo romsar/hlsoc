@@ -110,6 +110,8 @@ services:
     depends_on:
       - pgpool
       - migrate
+      - rabbitmq
+      - redis
   redis:
     image: docker.io/bitnami/redis:7.2
     environment:
@@ -118,6 +120,14 @@ services:
       - '6379:6379'
     volumes:
       - 'redis_data:/bitnami/redis/data'
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
 
 volumes:
   pg_0_data:

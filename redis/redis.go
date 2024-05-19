@@ -11,6 +11,7 @@ type Client struct {
 	c              *redis.Client
 	userRepository hlsoc.UserRepository
 	postRepository hlsoc.PostRepository
+	postBroker     hlsoc.PostBroker
 }
 
 type Option func(c *Client)
@@ -24,6 +25,12 @@ func WithUserRepository(repo hlsoc.UserRepository) Option {
 func WithPostRepository(repo hlsoc.PostRepository) Option {
 	return func(c *Client) {
 		c.postRepository = repo
+	}
+}
+
+func WithPostBroker(broker hlsoc.PostBroker) Option {
+	return func(c *Client) {
+		c.postBroker = broker
 	}
 }
 

@@ -18,6 +18,7 @@ type Server struct {
 	userRepository hlsoc.UserRepository
 	passwordHasher hlsoc.PasswordHasher
 	postRepository hlsoc.PostRepository
+	postBroker     hlsoc.PostBroker
 
 	grpcgen.UnimplementedUserServiceServer
 	grpcgen.UnimplementedPostServiceServer
@@ -49,9 +50,18 @@ func WithPostRepository(repo hlsoc.PostRepository) Option {
 	}
 }
 
+func WithPostBroker(broker hlsoc.PostBroker) Option {
+	return func(s *Server) {
+		s.postBroker = broker
+	}
+}
+
 func New(addr string, opts ...Option) *Server {
 	s := &Server{addr: addr}
-	s.s = grpc.NewServer(grpc.ChainUnaryInterceptor(s.loggingInterceptor, s.authInterceptor))
+	s.s = grpc.NewServer(
+		grpc.ChainUnaryInterceptor(s.loggingUnaryInterceptor, s.authUnaryInterceptor),
+		grpc.ChainStreamInterceptor(s.authStreamInterceptor),
+	)
 
 	for _, opt := range opts {
 		opt(s)

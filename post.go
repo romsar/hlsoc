@@ -24,3 +24,8 @@ type PostRepository interface {
 	GetFeed(ctx context.Context, filter *FeedFilter) ([]*Post, error)
 	CreatePost(ctx context.Context, post *Post) error
 }
+
+type PostBroker interface {
+	ProduceNewPost(ctx context.Context, userID uuid.UUID, post *Post) error
+	ConsumeNewPost(ctx context.Context, userID uuid.UUID, f func(post *Post) error) error
+}

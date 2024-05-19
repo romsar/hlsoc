@@ -8,6 +8,7 @@ option go_package = "github.com/romsar/hlsoc/grpc/gen;grpcgen";
 
 service PostService {
   rpc GetFeed(GetFeedRequest) returns (GetFeedResponse);
+  rpc StreamFeed(StreamFeedRequest) returns (stream Post);
   rpc CreatePost(CreatePostRequest) returns (CreatePostResponse);
 }
 
@@ -26,6 +27,9 @@ message CreatePostRequest {
 
 message CreatePostResponse {
   Post post = 1;
+}
+
+message StreamFeedRequest {
 }
 
 message Post {

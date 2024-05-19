@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func (s *Server) loggingInterceptor(
+func (s *Server) loggingUnaryInterceptor(
 	ctx context.Context,
 	req interface{},
 	info *grpc.UnaryServerInfo,

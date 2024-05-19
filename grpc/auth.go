@@ -20,7 +20,7 @@ var (
 	errInvalidToken    = status.Errorf(codes.Unauthenticated, "invalid token")
 )
 
-func (s *Server) authInterceptor(
+func (s *Server) authUnaryInterceptor(
 	ctx context.Context,
 	req interface{},
 	info *grpc.UnaryServerInfo,
@@ -41,6 +41,39 @@ func (s *Server) authInterceptor(
 	}
 
 	return handler(ctx, req)
+}
+
+type wrappedStream struct {
+	ctx context.Context
+	grpc.ServerStream
+}
+
+func (w *wrappedStream) Context() context.Context {
+	return w.ctx
+}
+
+func newWrappedStream(ctx context.Context, s grpc.ServerStream) grpc.ServerStream {
+	return &wrappedStream{ctx, s}
+}
+
+func (s *Server) authStreamInterceptor(srv any, ss grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) error {
+	if slices.Contains(authMethods, filepath.Base(info.FullMethod)) {
+		md, ok := metadata.FromIncomingContext(ss.Context())
+		if !ok {
+			return errMissingMetadata
+		}
+
+		user, valid := s.valid(md["authorization"])
+		if !valid {
+			return errInvalidToken
+		}
+
+		ctx := context.WithValue(ss.Context(), "user", user)
+
+		return handler(srv, newWrappedStream(ctx, ss))
+	}
+
+	return handler(srv, ss)
 }
 
 func (s *Server) valid(authorization []string) (*hlsoc.User, bool) {
