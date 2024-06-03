@@ -1,6 +1,0 @@
-rock_manifest = {
-   ["dialogs-scm-1.rockspec"] = "e22ec87471bee2dad905566297338cf0",
-   doc = {
-      ["README.md"] = "cdfefd8976c712d2603ec2fa2b6741b3"
-   }
-}
