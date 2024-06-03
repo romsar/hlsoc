@@ -93,13 +93,13 @@ services:
   migrate:
     image: migrate/migrate
     volumes:
-      - ./postgres/migrations:/postgres/migrations
+      - ./microservices/hlsoc/postgres/migrations:/postgres/migrations
     command: [ "-path", "/postgres/migrations", "-database", "postgres://postgres:postgres@pgpool:5432/hlsoc?sslmode=disable", "up" ]
     depends_on:
       pgpool:
         condition: service_healthy
   serve:
-    build: .
+    build: ./microservices/hlsoc
     env_file:
       - path: .env
         required: false

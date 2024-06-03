@@ -1,0 +1,1091 @@
+Watchdog 2024/06/03 23:42:00 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-03 23:42:00.345 [58350] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-03 23:42:00.345 [58350] main/104/interactive I> log level 5 (INFO)
+2024-06-03 23:42:00.345 [58350] main/104/interactive I> wal/engine cleanup is paused
+2024-06-03 23:42:00.346 [58350] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-03 23:42:00.346 [58350] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-03 23:42:00.346 [58350] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-03 23:42:00.348 [58350] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-03 23:42:00.348 [58350] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:42:00.349 [58350] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-03 23:42:00.349 [58350] main/104/interactive I> connecting to 2 replicas
+2024-06-03 23:42:00.350 [58350] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-03 23:42:00.350 [58350] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-03 23:42:00.351 [58350] main/104/interactive I> connected to 2 replicas
+2024-06-03 23:42:00.351 [58350] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-03 23:42:00.351 [58350] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-03 23:42:00.351 [58350] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-03 23:42:02.377 [58350] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-03 23:42:02.377 [58350] main/104/interactive I> bootstrapping replica from 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303
+2024-06-03 23:42:02.378 [58350] main/112/applier/replicator@localhost:3303 I> replicaset name: storage-002
+2024-06-03 23:42:02.378 [58350] main/112/applier/replicator@localhost:3303 I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-03 23:42:02.400 [58350] main/112/applier/replicator@localhost:3303 I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> update replication_synchro_quorum = 1
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> initial data received
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> update replication_synchro_quorum = 2
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> RAFT: fencing paused
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:42:02.401 [58350] main/112/applier/replicator@localhost:3303 I> final data received
+2024-06-03 23:42:02.402 [58350] snapshot/101/main I> saving snapshot `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.snap.inprogress'
+2024-06-03 23:42:02.403 [58350] snapshot/101/main I> done
+2024-06-03 23:42:02.403 [58350] main/104/interactive I> ready to accept requests
+2024-06-03 23:42:02.403 [58350] main/104/interactive I> synchronizing with 2 replicas
+2024-06-03 23:42:02.403 [58350] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-03 23:42:02.404 [58350] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 64} local vclock {1: 64}
+2024-06-03 23:42:02.404 [58350] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-03 23:42:02.404 [58350] main/104/interactive I> entering orphan mode
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-03 23:42:02.404 [58350] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:21:02 2024
+2024-06-03 23:42:02.404 [58350] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-03 23:42:02.404 [58350] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-03 23:42:02.405 [58350] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-03 23:42:02.432 [58350] main/121/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-03 23:42:02.432 [58350] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-03 23:42:02.433 [58350] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:39:58 2024
+2024-06-03 23:42:02.467 [58350] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-03 23:42:02.467 [58350] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-03 23:42:02.467 [58350] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-03 23:42:02.467 [58350] main/126/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-03 23:42:02.468 [58350] main/128/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-03 23:42:02.478 [58350] main I> entering the event loop
+2024-06-03 23:42:03.407 [58350] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 25, aka [::1]:3304, peer of [::1]:63941
+2024-06-03 23:42:03.407 [58350] main/111/main I> remote vclock {1: 64} local vclock {1: 64}
+2024-06-03 23:42:03.407 [58350] main/106/gc I> wal/engine cleanup is resumed
+2024-06-03 23:42:06.952 [58350] relay/[::1]:63941/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-03 23:52:54.750 [58350] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-03 23:52:54.750 [58350] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-03 23:52:54.750 [58350] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-03 23:52:54.750 [58350] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 24, aka [::1]:63929, peer of [::1]:3303: Broken pipe
+2024-06-03 23:52:54.750 [58350] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-03 23:52:54.752 [58350] relay/[::1]:63941/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 25, aka [::1]:3304, peer of [::1]:63941: Broken pipe
+2024-06-03 23:52:54.752 [58350] relay/[::1]:63941/101/main I> exiting the relay loop
+2024-06-03 23:52:54.851 [58350] main C> got signal 2 - Interrupt: 2
+2024-06-03 23:52:54.851 [58350] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-03 23:52:54.852 [58350] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/03 23:52:54 (INFO): the Instance has shutdown.
+Watchdog 2024/06/03 23:53:16 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-03 23:53:16.318 [59750] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-03 23:53:16.319 [59750] main/104/interactive I> log level 5 (INFO)
+2024-06-03 23:53:16.319 [59750] main/104/interactive I> wal/engine cleanup is paused
+2024-06-03 23:53:16.319 [59750] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-03 23:53:16.319 [59750] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-03 23:53:16.319 [59750] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-03 23:53:16.320 [59750] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-03 23:53:16.322 [59750] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-03 23:53:16.322 [59750] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:53:16.323 [59750] main/104/interactive I> instance vclock {1: 1064}
+2024-06-03 23:53:16.324 [59750] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-03 23:53:16.324 [59750] main/104/interactive I> connecting to 2 replicas
+2024-06-03 23:53:16.325 [59750] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-03 23:53:16.325 [59750] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-03 23:53:16.326 [59750] main/104/interactive I> connected to 2 replicas
+2024-06-03 23:53:16.326 [59750] main/104/interactive I> recovery start
+2024-06-03 23:53:16.326 [59750] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-03 23:53:16.326 [59750] main/104/interactive I> replicaset name: storage-002
+2024-06-03 23:53:16.326 [59750] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> RAFT: fencing paused
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:53:16.345 [59750] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> Space '_bucket': done
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> ready to accept requests
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> synchronizing with 2 replicas
+2024-06-03 23:53:16.346 [59750] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-03 23:53:16.346 [59750] main/104/interactive I> entering orphan mode
+2024-06-03 23:53:16.346 [59750] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-03 23:53:16.346 [59750] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-03 23:53:16.346 [59750] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-03 23:53:16.346 [59750] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-03 23:53:16.346 [59750] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-03 23:53:16.346 [59750] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-03 23:53:16.346 [59750] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:51:11 2024
+2024-06-03 23:53:16.347 [59750] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-03 23:53:16.347 [59750] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-03 23:53:16.347 [59750] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-03 23:53:16.347 [59750] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-03 23:53:16.347 [59750] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-03 23:53:16.367 [59750] main/119/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-03 23:53:16.368 [59750] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-03 23:53:16.368 [59750] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:42:00 2024
+2024-06-03 23:53:16.405 [59750] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-03 23:53:16.405 [59750] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-03 23:53:16.405 [59750] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-03 23:53:16.405 [59750] main/124/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-03 23:53:16.405 [59750] main/126/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-03 23:53:16.410 [59750] main I> entering the event loop
+2024-06-03 23:53:17.354 [59750] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 13, aka [::1]:3304, peer of [::1]:65239
+2024-06-03 23:53:17.354 [59750] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-03 23:53:17.354 [59750] main/106/gc I> wal/engine cleanup is resumed
+2024-06-03 23:53:17.355 [59750] relay/[::1]:65239/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-03 23:53:17.374 [59750] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-03 23:53:17.374 [59750] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-03 23:53:17.374 [59750] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-03 23:53:17.374 [59750] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-03 23:53:17.375 [59750] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-03 23:56:46.365 [59750] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-03 23:56:46.365 [59750] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-03 23:56:46.365 [59750] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-03 23:56:46.365 [59750] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 26, aka [::1]:65243, peer of [::1]:3303: Broken pipe
+2024-06-03 23:56:46.365 [59750] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-03 23:56:46.367 [59750] relay/[::1]:65239/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 13, aka [::1]:3304, peer of [::1]:65239: Broken pipe
+2024-06-03 23:56:46.367 [59750] relay/[::1]:65239/101/main I> exiting the relay loop
+2024-06-03 23:56:46.464 [59750] main C> got signal 2 - Interrupt: 2
+2024-06-03 23:56:46.464 [59750] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-03 23:56:46.466 [59750] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/03 23:56:46 (INFO): the Instance has shutdown.
+Watchdog 2024/06/03 23:56:52 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-03 23:56:52.776 [60037] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-03 23:56:52.776 [60037] main/104/interactive I> log level 5 (INFO)
+2024-06-03 23:56:52.776 [60037] main/104/interactive I> wal/engine cleanup is paused
+2024-06-03 23:56:52.776 [60037] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-03 23:56:52.776 [60037] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-03 23:56:52.776 [60037] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-03 23:56:52.777 [60037] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-03 23:56:52.778 [60037] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-03 23:56:52.778 [60037] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:56:52.779 [60037] main/104/interactive I> instance vclock {1: 1064}
+2024-06-03 23:56:52.780 [60037] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-03 23:56:52.780 [60037] main/104/interactive I> connecting to 2 replicas
+2024-06-03 23:56:52.781 [60037] main/112/applier/replicator@localhost:3303 I> can't connect to master
+2024-06-03 23:56:52.781 [60037] main/112/applier/replicator@localhost:3303 coio.c:83 E> SocketError: connect, called on fd 27, aka 127.0.0.1:65414: Connection refused
+2024-06-03 23:56:52.781 [60037] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-03 23:56:52.781 [60037] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-03 23:56:53.782 [60037] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-03 23:56:53.784 [60037] main/104/interactive I> connected to 2 replicas
+2024-06-03 23:56:53.784 [60037] main/104/interactive I> recovery start
+2024-06-03 23:56:53.784 [60037] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-03 23:56:53.785 [60037] main/104/interactive I> replicaset name: storage-002
+2024-06-03 23:56:53.785 [60037] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> RAFT: fencing paused
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-03 23:56:53.811 [60037] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-03 23:56:53.812 [60037] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-03 23:56:53.812 [60037] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-03 23:56:53.812 [60037] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-03 23:56:53.813 [60037] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-03 23:56:53.813 [60037] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-03 23:56:53.813 [60037] main/104/interactive I> Space '_bucket': done
+2024-06-03 23:56:53.813 [60037] main/104/interactive I> ready to accept requests
+2024-06-03 23:56:53.813 [60037] main/104/interactive I> synchronizing with 2 replicas
+2024-06-03 23:56:53.813 [60037] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-03 23:56:53.813 [60037] main/104/interactive I> entering orphan mode
+2024-06-03 23:56:53.813 [60037] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-03 23:56:53.813 [60037] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:35:29 2024
+2024-06-03 23:56:53.813 [60037] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-03 23:56:53.813 [60037] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-03 23:56:53.813 [60037] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-03 23:56:53.814 [60037] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-03 23:56:53.814 [60037] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-03 23:56:53.837 [60037] main/119/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-03 23:56:53.837 [60037] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-03 23:56:53.838 [60037] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:34:29 2024
+2024-06-03 23:56:53.877 [60037] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-03 23:56:53.877 [60037] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-03 23:56:53.877 [60037] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-03 23:56:53.877 [60037] main/124/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-03 23:56:53.877 [60037] main/126/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-03 23:56:53.881 [60037] main I> entering the event loop
+2024-06-03 23:56:53.881 [60037] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 26, aka [::1]:3304, peer of [::1]:65428
+2024-06-03 23:56:53.881 [60037] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-03 23:56:53.881 [60037] main/106/gc I> wal/engine cleanup is resumed
+2024-06-03 23:56:53.882 [60037] relay/[::1]:65428/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:00:23.154 [60037] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:00:23.154 [60037] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 00:00:23.154 [60037] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 00:00:23.154 [60037] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 30, aka [::1]:65425, peer of [::1]:3303: Broken pipe
+2024-06-04 00:00:23.154 [60037] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:00:23.155 [60037] relay/[::1]:65428/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 26, aka [::1]:3304, peer of [::1]:65428: Broken pipe
+2024-06-04 00:00:23.155 [60037] relay/[::1]:65428/101/main I> exiting the relay loop
+2024-06-04 00:00:23.254 [60037] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:00:23.254 [60037] main/128/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:00:23.255 [60037] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 00:00:23 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:00:30 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:00:31.151 [60305] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:00:31.151 [60305] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:00:31.152 [60305] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:00:31.152 [60305] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:00:31.152 [60305] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:00:31.152 [60305] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:00:31.152 [60305] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:00:31.153 [60305] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:00:31.154 [60305] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:00:31.154 [60305] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:00:31.155 [60305] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:00:31.155 [60305] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:00:31.156 [60305] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:00:31.156 [60305] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:00:31.157 [60305] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:00:31.157 [60305] main/104/interactive I> recovery start
+2024-06-04 00:00:31.157 [60305] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:00:31.158 [60305] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:00:31.158 [60305] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:00:31.177 [60305] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:00:31.177 [60305] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:00:31.178 [60305] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:00:31.178 [60305] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:00:31.178 [60305] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:00:31.178 [60305] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:00:31.178 [60305] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:00:31.178 [60305] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:00:31.179 [60305] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:00:31.179 [60305] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:00:31.179 [60305] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:00:31.179 [60305] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:00:31.179 [60305] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:00:31.179 [60305] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:00:31.180 [60305] main/104/interactive I> ready to accept requests
+2024-06-04 00:00:31.180 [60305] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:00:31.180 [60305] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-04 00:00:31.180 [60305] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-04 00:00:31.180 [60305] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:00:31.180 [60305] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:00:31.180 [60305] main/104/interactive I> entering orphan mode
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:00:31.180 [60305] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:46:49 2024
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:00:31.180 [60305] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:00:31.203 [60305] main/119/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:00:31.204 [60305] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:00:31.205 [60305] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:24:30 2024
+2024-06-04 00:00:31.242 [60305] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:00:31.242 [60305] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:00:31.242 [60305] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:00:31.242 [60305] main/124/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:00:31.242 [60305] main/126/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:00:31.249 [60305] main I> entering the event loop
+2024-06-04 00:00:32.174 [60305] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 13, aka [::1]:3304, peer of [::1]:49301
+2024-06-04 00:00:32.174 [60305] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:00:32.174 [60305] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:00:32.174 [60305] relay/[::1]:49301/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:00:32.235 [60305] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:00:32.240 [60305] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:00:32.240 [60305] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:00:32.240 [60305] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:00:32.241 [60305] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:02:03.679 [60305] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:02:03.679 [60305] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 00:02:03.679 [60305] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 00:02:03.679 [60305] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 28, aka [::1]:49303, peer of [::1]:3303: Broken pipe
+2024-06-04 00:02:03.679 [60305] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:02:03.681 [60305] relay/[::1]:49301/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 13, aka [::1]:3304, peer of [::1]:49301: Broken pipe
+2024-06-04 00:02:03.681 [60305] relay/[::1]:49301/101/main I> exiting the relay loop
+2024-06-04 00:02:03.779 [60305] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:02:03.779 [60305] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:02:03.781 [60305] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 00:02:03 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:02:10 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:02:11.140 [60490] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:02:11.140 [60490] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:02:11.141 [60490] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:02:11.141 [60490] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:02:11.141 [60490] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:02:11.141 [60490] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:02:11.142 [60490] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:02:11.143 [60490] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:02:11.143 [60490] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:02:11.143 [60490] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:02:11.144 [60490] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:02:11.144 [60490] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:02:11.145 [60490] main/112/applier/replicator@localhost:3303 I> can't connect to master
+2024-06-04 00:02:11.145 [60490] main/112/applier/replicator@localhost:3303 coio.c:83 E> SocketError: connect, called on fd 27, aka 127.0.0.1:49359: Connection refused
+2024-06-04 00:02:11.145 [60490] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:02:11.145 [60490] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:02:12.146 [60490] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:02:12.147 [60490] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:02:12.147 [60490] main/104/interactive I> recovery start
+2024-06-04 00:02:12.147 [60490] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:02:12.147 [60490] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:02:12.147 [60490] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:02:12.170 [60490] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:02:12.171 [60490] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:02:12.171 [60490] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:02:12.171 [60490] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:02:12.171 [60490] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:02:12.171 [60490] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:02:12.171 [60490] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:02:12.172 [60490] main/104/interactive I> ready to accept requests
+2024-06-04 00:02:12.172 [60490] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:02:12.172 [60490] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:02:12.172 [60490] main/104/interactive I> entering orphan mode
+2024-06-04 00:02:12.172 [60490] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:02:12.172 [60490] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:02:12.172 [60490] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:02:12.172 [60490] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:02:12.172 [60490] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:02:12.172 [60490] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:02:12.172 [60490] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:02:12.172 [60490] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:23:53 2024
+2024-06-04 00:02:12.172 [60490] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:02:12.172 [60490] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:02:12.173 [60490] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:02:12.173 [60490] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:02:12.173 [60490] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:02:12.173 [60490] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:02:12.173 [60490] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 33, aka [::1]:3304, peer of [::1]:49387
+2024-06-04 00:02:12.173 [60490] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:02:12.174 [60490] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:02:12.195 [60490] relay/[::1]:49387/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:02:12.197 [60490] main/120/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:02:12.198 [60490] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:02:12.200 [60490] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:02:43 2024
+2024-06-04 00:02:12.237 [60490] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:02:12.237 [60490] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:02:12.237 [60490] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:02:12.237 [60490] main/125/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:02:12.237 [60490] main/127/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:02:12.243 [60490] main I> entering the event loop
+2024-06-04 00:02:56.023 [60490] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:02:56.023 [60490] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 00:02:56.023 [60490] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 00:02:56.023 [60490] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 30, aka [::1]:49383, peer of [::1]:3303: Broken pipe
+2024-06-04 00:02:56.023 [60490] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:02:56.024 [60490] relay/[::1]:49387/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 33, aka [::1]:3304, peer of [::1]:49387: Broken pipe
+2024-06-04 00:02:56.024 [60490] relay/[::1]:49387/101/main I> exiting the relay loop
+2024-06-04 00:02:56.122 [60490] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:02:56.122 [60490] main/128/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:02:56.123 [60490] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 00:02:56 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:03:00 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:03:01.034 [60630] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:03:01.035 [60630] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:03:01.035 [60630] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:03:01.044 [60630] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:03:01.044 [60630] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:03:01.044 [60630] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:03:01.046 [60630] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:03:01.049 [60630] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:03:01.049 [60630] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:03:01.050 [60630] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:03:01.053 [60630] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:03:01.053 [60630] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:03:01.056 [60630] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:03:01.056 [60630] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:03:01.058 [60630] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:03:01.058 [60630] main/104/interactive I> recovery start
+2024-06-04 00:03:01.058 [60630] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:03:01.059 [60630] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:03:01.059 [60630] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:03:01.083 [60630] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:03:01.084 [60630] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:03:01.084 [60630] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:03:01.084 [60630] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:03:01.084 [60630] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:03:01.084 [60630] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:03:01.084 [60630] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:03:01.085 [60630] main/104/interactive I> ready to accept requests
+2024-06-04 00:03:01.085 [60630] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:03:01.085 [60630] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:03:01.085 [60630] main/104/interactive I> entering orphan mode
+2024-06-04 00:03:01.086 [60630] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:03:01.086 [60630] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:03:01.086 [60630] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:03:01.086 [60630] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:03:01.086 [60630] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:03:01.086 [60630] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:03:01.086 [60630] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:34:32 2024
+2024-06-04 00:03:01.087 [60630] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:03:01.087 [60630] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:03:01.123 [60630] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-04 00:03:01.123 [60630] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-04 00:03:01.123 [60630] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:03:01.124 [60630] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 32, aka [::1]:3304, peer of [::1]:49419
+2024-06-04 00:03:01.124 [60630] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:03:01.124 [60630] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:03:01.126 [60630] main/120/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:03:01.127 [60630] relay/[::1]:49419/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/instances.enabled/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:03:01.127 [60630] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:03:01.128 [60630] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:50:09 2024
+2024-06-04 00:03:01.174 [60630] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:03:01.174 [60630] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:03:01.174 [60630] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:03:01.174 [60630] main/125/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:03:01.174 [60630] main/127/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:03:01.180 [60630] main I> entering the event loop
+2024-06-04 00:03:02.126 [60630] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:03:02.126 [60630] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:03:02.126 [60630] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:03:02.126 [60630] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:03:02.127 [60630] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:09:10.133 [60630] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:09:10.133 [60630] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:09:10.134 [60630] relay/[::1]:49419/101/main I> fiber `main' has been cancelled
+2024-06-04 00:09:10.134 [60630] relay/[::1]:49419/101/main I> fiber `main': exiting
+2024-06-04 00:09:10.134 [60630] relay/[::1]:49419/101/main I> exiting the relay loop
+2024-06-04 00:09:10.135 [60630] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:09:10.135 [60630] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+Watchdog 2024/06/04 00:09:10 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:10:18 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:10:18.774 [61385] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:10:18.776 [61385] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:10:18.776 [61385] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:10:18.776 [61385] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:10:18.776 [61385] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:10:18.776 [61385] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:10:18.776 [61385] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:10:18.777 [61385] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:10:18.778 [61385] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:10:18.778 [61385] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:10:18.779 [61385] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:10:18.779 [61385] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:10:18.780 [61385] main/112/applier/replicator@localhost:3303 I> can't connect to master
+2024-06-04 00:10:18.780 [61385] main/112/applier/replicator@localhost:3303 coio.c:83 E> SocketError: connect, called on fd 26, aka 127.0.0.1:50384: Connection refused
+2024-06-04 00:10:18.780 [61385] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:10:18.780 [61385] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:10:19.781 [61385] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:10:19.781 [61385] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:10:19.781 [61385] main/104/interactive I> recovery start
+2024-06-04 00:10:19.781 [61385] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:10:19.782 [61385] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:10:19.782 [61385] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:10:19.799 [61385] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:10:19.800 [61385] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:10:19.800 [61385] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:10:19.800 [61385] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:10:19.800 [61385] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:10:19.800 [61385] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:10:19.800 [61385] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:10:19.801 [61385] main/104/interactive I> ready to accept requests
+2024-06-04 00:10:19.801 [61385] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:10:19.801 [61385] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:10:19.801 [61385] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:10:19.801 [61385] main/104/interactive I> entering orphan mode
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:10:19.801 [61385] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:18:47 2024
+2024-06-04 00:10:19.801 [61385] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:10:19.801 [61385] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:10:19.801 [61385] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:10:19.802 [61385] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:10:19.802 [61385] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:10:19.819 [61385] main/119/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:10:19.822 [61385] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:10:19.824 [61385] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:59:02 2024
+2024-06-04 00:10:19.872 [61385] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:10:19.872 [61385] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:10:19.872 [61385] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:10:19.873 [61385] main/124/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:10:19.873 [61385] main/126/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:10:19.884 [61385] main I> entering the event loop
+2024-06-04 00:10:19.884 [61385] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 26, aka [::1]:3304, peer of [::1]:50411
+2024-06-04 00:10:19.884 [61385] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:10:19.885 [61385] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:10:19.885 [61385] relay/[::1]:50411/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:12:14.268 [61385] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:12:14.268 [61385] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 00:12:14.268 [61385] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 00:12:14.268 [61385] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 30, aka [::1]:50407, peer of [::1]:3303: Broken pipe
+2024-06-04 00:12:14.268 [61385] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:12:14.269 [61385] relay/[::1]:50411/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 26, aka [::1]:3304, peer of [::1]:50411: Broken pipe
+2024-06-04 00:12:14.269 [61385] relay/[::1]:50411/101/main I> exiting the relay loop
+2024-06-04 00:12:14.367 [61385] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:12:14.368 [61385] main/128/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:12:14.369 [61385] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 00:12:14 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:12:31 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:12:32.134 [61627] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:12:32.134 [61627] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:12:32.134 [61627] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:12:32.135 [61627] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:12:32.135 [61627] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:12:32.135 [61627] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:12:32.135 [61627] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:12:32.136 [61627] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:12:32.136 [61627] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:12:32.136 [61627] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:12:32.137 [61627] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:12:32.137 [61627] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:12:32.138 [61627] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:12:32.138 [61627] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:12:32.140 [61627] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:12:32.140 [61627] main/104/interactive I> recovery start
+2024-06-04 00:12:32.140 [61627] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:12:32.140 [61627] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:12:32.140 [61627] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:12:32.160 [61627] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> ready to accept requests
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:12:32.161 [61627] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:12:32.161 [61627] main/104/interactive I> entering orphan mode
+2024-06-04 00:12:32.161 [61627] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:12:32.161 [61627] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:12:32.161 [61627] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:12:32.162 [61627] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:12:32.162 [61627] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:12:32.162 [61627] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:12:32.162 [61627] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:34:39 2024
+2024-06-04 00:12:32.162 [61627] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:12:32.162 [61627] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:12:32.162 [61627] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:12:32.162 [61627] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 27, aka [::1]:3304, peer of [::1]:50481
+2024-06-04 00:12:32.162 [61627] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:12:32.162 [61627] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:12:32.163 [61627] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:12:32.163 [61627] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:12:32.163 [61627] relay/[::1]:50481/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:12:32.177 [61627] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:12:32.177 [61627] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:12:32.179 [61627] main/120/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:12:32.180 [61627] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:12:32.181 [61627] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:22:49 2024
+2024-06-04 00:12:32.213 [61627] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:12:32.213 [61627] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:12:32.213 [61627] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:12:32.213 [61627] main/125/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:12:32.213 [61627] main/127/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:12:32.220 [61627] main I> entering the event loop
+2024-06-04 00:38:47.298 [61627] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:38:47.298 [61627] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 00:38:47.298 [61627] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 00:38:47.298 [61627] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 28, aka [::1]:50483, peer of [::1]:3303: Broken pipe
+2024-06-04 00:38:47.298 [61627] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:38:47.300 [61627] relay/[::1]:50481/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 27, aka [::1]:3304, peer of [::1]:50481: Broken pipe
+2024-06-04 00:38:47.300 [61627] relay/[::1]:50481/101/main I> exiting the relay loop
+2024-06-04 00:38:47.397 [61627] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:38:47.397 [61627] main/128/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:38:47.399 [61627] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 00:38:47 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:38:47 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:38:47.868 [64890] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:38:47.870 [64890] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:38:47.870 [64890] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:38:47.870 [64890] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:38:47.870 [64890] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:38:47.870 [64890] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:38:47.871 [64890] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:38:47.872 [64890] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:38:47.872 [64890] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:38:47.873 [64890] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:38:47.874 [64890] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:38:47.874 [64890] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:38:47.875 [64890] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:38:47.875 [64890] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:38:47.877 [64890] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:38:47.877 [64890] main/104/interactive I> recovery start
+2024-06-04 00:38:47.877 [64890] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:38:47.877 [64890] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:38:47.877 [64890] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:38:47.895 [64890] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:38:47.895 [64890] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:38:47.895 [64890] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:38:47.895 [64890] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:38:47.895 [64890] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:38:47.895 [64890] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:38:47.895 [64890] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:38:47.896 [64890] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:38:47.896 [64890] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:38:47.896 [64890] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:38:47.896 [64890] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:38:47.896 [64890] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:38:47.896 [64890] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:38:47.897 [64890] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:38:47.897 [64890] main/104/interactive I> ready to accept requests
+2024-06-04 00:38:47.897 [64890] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:38:47.897 [64890] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:38:47.897 [64890] main/104/interactive I> entering orphan mode
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:38:47.897 [64890] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:17:02 2024
+2024-06-04 00:38:47.897 [64890] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-04 00:38:47.897 [64890] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-04 00:38:47.897 [64890] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:38:47.897 [64890] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:38:47.898 [64890] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 28, aka [::1]:3304, peer of [::1]:55459
+2024-06-04 00:38:47.898 [64890] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:38:47.898 [64890] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:38:47.913 [64890] relay/[::1]:55459/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:38:47.915 [64890] main/120/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:38:47.916 [64890] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:38:47.917 [64890] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:30:19 2024
+2024-06-04 00:38:47.953 [64890] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:38:47.953 [64890] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:38:47.953 [64890] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:38:47.953 [64890] main/125/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:38:47.953 [64890] main/127/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:38:47.961 [64890] main I> entering the event loop
+2024-06-04 00:38:48.900 [64890] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:38:48.900 [64890] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:38:48.900 [64890] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:38:48.901 [64890] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:38:48.901 [64890] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:40:54.048 [64890] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:40:54.048 [64890] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 00:40:54.048 [64890] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 00:40:54.048 [64890] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 14, aka [::1]:55482, peer of [::1]:3303: Broken pipe
+2024-06-04 00:40:54.048 [64890] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:40:54.049 [64890] relay/[::1]:55459/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 28, aka [::1]:3304, peer of [::1]:55459: Broken pipe
+2024-06-04 00:40:54.049 [64890] relay/[::1]:55459/101/main I> exiting the relay loop
+2024-06-04 00:40:54.149 [64890] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:40:54.149 [64890] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:40:54.150 [64890] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 00:40:54 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:40:57 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:40:57.570 [65108] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:40:57.571 [65108] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:40:57.571 [65108] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:40:57.571 [65108] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:40:57.571 [65108] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:40:57.571 [65108] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:40:57.572 [65108] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:40:57.573 [65108] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:40:57.573 [65108] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:40:57.574 [65108] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:40:57.575 [65108] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:40:57.575 [65108] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:40:57.576 [65108] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:40:57.576 [65108] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:40:57.577 [65108] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:40:57.578 [65108] main/104/interactive I> recovery start
+2024-06-04 00:40:57.578 [65108] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:40:57.578 [65108] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:40:57.578 [65108] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:40:57.596 [65108] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:40:57.597 [65108] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:40:57.597 [65108] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:40:57.597 [65108] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:40:57.598 [65108] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:40:57.598 [65108] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:40:57.598 [65108] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:40:57.598 [65108] main/104/interactive I> ready to accept requests
+2024-06-04 00:40:57.598 [65108] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:40:57.598 [65108] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:40:57.598 [65108] main/104/interactive I> entering orphan mode
+2024-06-04 00:40:57.598 [65108] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:40:57.598 [65108] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:40:57.598 [65108] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:40:57.599 [65108] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:40:57.599 [65108] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:40:57.599 [65108] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:40:57.599 [65108] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:00:17 2024
+2024-06-04 00:40:57.599 [65108] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-04 00:40:57.599 [65108] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-04 00:40:57.599 [65108] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:40:57.599 [65108] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:40:57.599 [65108] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:40:57.616 [65108] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 29, aka [::1]:3304, peer of [::1]:55955
+2024-06-04 00:40:57.616 [65108] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:40:57.616 [65108] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:40:57.616 [65108] relay/[::1]:55955/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:40:57.618 [65108] main/120/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:40:57.619 [65108] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:40:57.620 [65108] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:09:03 2024
+2024-06-04 00:40:57.659 [65108] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:40:57.659 [65108] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:40:57.659 [65108] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:40:57.659 [65108] main/125/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:40:57.659 [65108] main/127/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:40:57.667 [65108] main I> entering the event loop
+2024-06-04 00:40:58.601 [65108] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:40:58.601 [65108] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:40:58.601 [65108] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:40:58.601 [65108] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:40:58.602 [65108] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:42:46.501 [65108] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:42:46.501 [65108] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 00:42:46.501 [65108] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 00:42:46.501 [65108] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 14, aka [::1]:55973, peer of [::1]:3303: Broken pipe
+2024-06-04 00:42:46.501 [65108] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:42:46.502 [65108] relay/[::1]:55955/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 29, aka [::1]:3304, peer of [::1]:55955: Broken pipe
+2024-06-04 00:42:46.502 [65108] relay/[::1]:55955/101/main I> exiting the relay loop
+2024-06-04 00:42:46.602 [65108] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:42:46.602 [65108] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:42:46.603 [65108] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 00:42:46 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:42:47 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:42:47.199 [65216] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:42:47.200 [65216] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:42:47.200 [65216] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:42:47.200 [65216] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:42:47.200 [65216] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:42:47.200 [65216] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:42:47.201 [65216] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:42:47.202 [65216] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:42:47.202 [65216] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:42:47.203 [65216] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:42:47.204 [65216] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:42:47.204 [65216] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:42:47.205 [65216] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:42:47.205 [65216] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:42:47.206 [65216] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:42:47.206 [65216] main/104/interactive I> recovery start
+2024-06-04 00:42:47.206 [65216] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:42:47.206 [65216] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:42:47.206 [65216] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:42:47.228 [65216] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:42:47.229 [65216] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:42:47.229 [65216] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:42:47.229 [65216] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:42:47.230 [65216] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:42:47.230 [65216] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:42:47.230 [65216] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:42:47.230 [65216] main/104/interactive I> ready to accept requests
+2024-06-04 00:42:47.230 [65216] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:42:47.230 [65216] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:42:47.230 [65216] main/104/interactive I> entering orphan mode
+2024-06-04 00:42:47.230 [65216] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:42:47.230 [65216] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:42:47.230 [65216] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:42:47.230 [65216] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:42:47.230 [65216] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:42:47.230 [65216] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:42:47.230 [65216] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:36:42 2024
+2024-06-04 00:42:47.230 [65216] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-04 00:42:47.230 [65216] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-04 00:42:47.230 [65216] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:42:47.231 [65216] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:42:47.231 [65216] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:42:47.253 [65216] main/119/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:42:47.254 [65216] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:42:47.255 [65216] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 01:52:48 2024
+2024-06-04 00:42:47.293 [65216] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:42:47.293 [65216] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:42:47.293 [65216] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:42:47.294 [65216] main/124/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:42:47.294 [65216] main/126/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:42:47.303 [65216] main I> entering the event loop
+2024-06-04 00:42:48.226 [65216] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 13, aka [::1]:3304, peer of [::1]:56425
+2024-06-04 00:42:48.226 [65216] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:42:48.226 [65216] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:42:48.226 [65216] relay/[::1]:56425/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:42:48.278 [65216] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:42:48.286 [65216] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:42:48.286 [65216] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:42:48.286 [65216] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:42:48.287 [65216] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 00:47:03.710 [65216] main C> got signal 2 - Interrupt: 2
+2024-06-04 00:47:03.710 [65216] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-04 00:47:03.710 [65216] relay/[::1]:56425/101/main I> fiber `main' has been cancelled
+2024-06-04 00:47:03.710 [65216] relay/[::1]:56425/101/main I> fiber `main': exiting
+2024-06-04 00:47:03.710 [65216] relay/[::1]:56425/101/main I> exiting the relay loop
+2024-06-04 00:47:03.711 [65216] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 00:47:03.711 [65216] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+Watchdog 2024/06/04 00:47:03 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 00:47:04 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 00:47:04.624 [65439] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 00:47:04.625 [65439] main/104/interactive I> log level 5 (INFO)
+2024-06-04 00:47:04.625 [65439] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 00:47:04.625 [65439] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 00:47:04.625 [65439] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 00:47:04.625 [65439] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 00:47:04.626 [65439] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 00:47:04.627 [65439] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:47:04.628 [65439] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:47:04.628 [65439] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 00:47:04.629 [65439] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 00:47:04.629 [65439] main/104/interactive I> connecting to 2 replicas
+2024-06-04 00:47:04.630 [65439] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 00:47:04.630 [65439] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 00:47:04.632 [65439] main/104/interactive I> connected to 2 replicas
+2024-06-04 00:47:04.632 [65439] main/104/interactive I> recovery start
+2024-06-04 00:47:04.632 [65439] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 00:47:04.632 [65439] main/104/interactive I> replicaset name: storage-002
+2024-06-04 00:47:04.632 [65439] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> RAFT: fencing paused
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 00:47:04.654 [65439] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> Space '_bucket': done
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> ready to accept requests
+2024-06-04 00:47:04.655 [65439] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 00:47:04.655 [65439] main/112/applier/replicator@localhost:3303 I> failed to authenticate
+2024-06-04 00:47:04.655 [65439] main/112/applier/replicator@localhost:3303 box.cc:4283 E> ER_LOADING: Instance bootstrap hasn't finished yet
+2024-06-04 00:47:04.655 [65439] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 00:47:04.656 [65439] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 00:47:04.656 [65439] main/104/interactive I> entering orphan mode
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 00:47:04.656 [65439] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:38:47 2024
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 00:47:04.656 [65439] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 00:47:04.678 [65439] main/119/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 00:47:04.680 [65439] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 00:47:04.682 [65439] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:07:39 2024
+2024-06-04 00:47:04.730 [65439] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 00:47:04.730 [65439] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 00:47:04.730 [65439] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 00:47:04.730 [65439] main/124/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 00:47:04.730 [65439] main/126/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 00:47:04.741 [65439] main I> entering the event loop
+2024-06-04 00:47:05.651 [65439] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 13, aka [::1]:3304, peer of [::1]:57433
+2024-06-04 00:47:05.651 [65439] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:47:05.651 [65439] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 00:47:05.652 [65439] relay/[::1]:57433/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 00:47:05.671 [65439] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 00:47:05.719 [65439] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 00:47:05.719 [65439] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 00:47:05.719 [65439] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 00:47:05.720 [65439] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 01:01:44.719 [65439] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 01:01:44.719 [65439] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 01:01:44.719 [65439] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 01:01:44.719 [65439] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 28, aka [::1]:57435, peer of [::1]:3303: Broken pipe
+2024-06-04 01:01:44.719 [65439] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 01:01:44.720 [65439] relay/[::1]:57433/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 13, aka [::1]:3304, peer of [::1]:57433: Broken pipe
+2024-06-04 01:01:44.720 [65439] relay/[::1]:57433/101/main I> exiting the relay loop
+2024-06-04 01:01:44.820 [65439] main C> got signal 2 - Interrupt: 2
+2024-06-04 01:01:44.820 [65439] main/130/iproto.shutdown I> tx_binary: stopped
+2024-06-04 01:01:44.821 [65439] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 01:01:44 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 01:01:46 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 01:01:46.796 [68157] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 01:01:46.796 [68157] main/104/interactive I> log level 5 (INFO)
+2024-06-04 01:01:46.796 [68157] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 01:01:46.797 [68157] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 01:01:46.797 [68157] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 01:01:46.797 [68157] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 01:01:46.797 [68157] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 01:01:46.798 [68157] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 01:01:46.798 [68157] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 01:01:46.799 [68157] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 01:01:46.800 [68157] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 01:01:46.800 [68157] main/104/interactive I> connecting to 2 replicas
+2024-06-04 01:01:46.801 [68157] main/112/applier/replicator@localhost:3303 I> can't connect to master
+2024-06-04 01:01:46.801 [68157] main/112/applier/replicator@localhost:3303 coio.c:83 E> SocketError: connect, called on fd 26, aka 127.0.0.1:59472: Connection refused
+2024-06-04 01:01:46.801 [68157] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 01:01:46.801 [68157] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 01:01:47.802 [68157] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 01:01:47.804 [68157] main/104/interactive I> connected to 2 replicas
+2024-06-04 01:01:47.804 [68157] main/104/interactive I> recovery start
+2024-06-04 01:01:47.804 [68157] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 01:01:47.804 [68157] main/104/interactive I> replicaset name: storage-002
+2024-06-04 01:01:47.804 [68157] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> RAFT: fencing paused
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 01:01:47.827 [68157] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 01:01:47.828 [68157] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 01:01:47.828 [68157] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 01:01:47.828 [68157] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 01:01:47.828 [68157] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 01:01:47.828 [68157] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 01:01:47.828 [68157] main/104/interactive I> Space '_bucket': done
+2024-06-04 01:01:47.829 [68157] main/104/interactive I> ready to accept requests
+2024-06-04 01:01:47.829 [68157] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 01:01:47.829 [68157] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 01:01:47.829 [68157] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 01:01:47.829 [68157] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 01:01:47.829 [68157] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 01:01:47.829 [68157] main/104/interactive I> entering orphan mode
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 01:01:47.829 [68157] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:27:18 2024
+2024-06-04 01:01:47.829 [68157] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 01:01:47.829 [68157] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 01:01:47.830 [68157] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 01:01:47.847 [68157] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 33, aka [::1]:3304, peer of [::1]:59500
+2024-06-04 01:01:47.847 [68157] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 01:01:47.847 [68157] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 01:01:47.848 [68157] relay/[::1]:59500/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 01:01:47.849 [68157] main/120/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 01:01:47.850 [68157] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 01:01:47.852 [68157] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 02:15:24 2024
+2024-06-04 01:01:47.882 [68157] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 01:01:47.882 [68157] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 01:01:47.882 [68157] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 01:01:47.882 [68157] main/125/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 01:01:47.882 [68157] main/127/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 01:01:47.886 [68157] main I> entering the event loop
+2024-06-04 01:03:16.538 [68157] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303' has been cancelled
+2024-06-04 01:03:16.538 [68157] applier_1/103/writer/replicator@localhost:3303 I> fiber `writer/replicator@localhost:3303': exiting
+2024-06-04 01:03:16.538 [68157] main/112/applier/replicator@localhost:3303 I> can't read row
+2024-06-04 01:03:16.538 [68157] main/112/applier/replicator@localhost:3303 coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 30, aka [::1]:59496, peer of [::1]:3303: Broken pipe
+2024-06-04 01:03:16.538 [68157] main/112/applier/replicator@localhost:3303 I> will retry every 1.00 second
+2024-06-04 01:03:16.540 [68157] relay/[::1]:59500/101/main coio.c:353 E> SocketError: unexpected EOF when reading from socket, called on fd 33, aka [::1]:3304, peer of [::1]:59500: Broken pipe
+2024-06-04 01:03:16.540 [68157] relay/[::1]:59500/101/main I> exiting the relay loop
+2024-06-04 01:03:16.637 [68157] main C> got signal 2 - Interrupt: 2
+2024-06-04 01:03:16.638 [68157] main/128/iproto.shutdown I> tx_binary: stopped
+2024-06-04 01:03:16.639 [68157] main/103/on_shutdown I> leaving orphan mode
+Watchdog 2024/06/04 01:03:16 (INFO): the Instance has shutdown.
+Watchdog 2024/06/04 01:03:35 (INFO): using "/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/config.yaml" cluster config for instance "storage-002-b"
+started
+2024-06-04 01:03:35.266 [68365] main/104/interactive I> Tarantool 3.1.0-0-g96f6d88 Darwin-x86_64-Release
+2024-06-04 01:03:35.266 [68365] main/104/interactive I> log level 5 (INFO)
+2024-06-04 01:03:35.266 [68365] main/104/interactive I> wal/engine cleanup is paused
+2024-06-04 01:03:35.266 [68365] main/104/interactive I> mapping 268435456 bytes for memtx tuple arena...
+2024-06-04 01:03:35.266 [68365] main/104/interactive I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2024-06-04 01:03:35.266 [68365] main/104/interactive I> mapping 134217728 bytes for vinyl tuple arena...
+2024-06-04 01:03:35.267 [68365] main/104/interactive/box.upgrade I> Recovering snapshot with schema version 3.1.0
+2024-06-04 01:03:35.268 [68365] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 01:03:35.268 [68365] main/104/interactive I> instance uuid dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 01:03:35.268 [68365] main/104/interactive I> instance vclock {1: 1064}
+2024-06-04 01:03:35.269 [68365] main/104/interactive I> tx_binary: bound to [::1]:3304
+2024-06-04 01:03:35.270 [68365] main/104/interactive I> connecting to 2 replicas
+2024-06-04 01:03:35.271 [68365] main/113/applier/replicator@localhost:3304 I> remote master dee60c8e-a0ea-47fd-98a0-5f5148c66b5c at [::1]:3304 running Tarantool 3.1.0
+2024-06-04 01:03:35.271 [68365] main/112/applier/replicator@localhost:3303 I> remote master 752ef934-84c7-4b08-82da-e774c1d65ede at [::1]:3303 running Tarantool 3.1.0
+2024-06-04 01:03:35.273 [68365] main/104/interactive I> connected to 2 replicas
+2024-06-04 01:03:35.273 [68365] main/104/interactive I> recovery start
+2024-06-04 01:03:35.273 [68365] main/104/interactive I> recovering from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.snap'
+2024-06-04 01:03:35.273 [68365] main/104/interactive I> replicaset name: storage-002
+2024-06-04 01:03:35.273 [68365] main/104/interactive I> replicaset uuid fcd2d325-2e08-4d17-b634-252980a300d6
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> assigned id 1 to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> update replication_synchro_quorum = 1
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> assigned name storage-002-a to replica 752ef934-84c7-4b08-82da-e774c1d65ede
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> assigned id 2 to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> RAFT: fencing paused
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> assigned name storage-002-b to replica dee60c8e-a0ea-47fd-98a0-5f5148c66b5c
+2024-06-04 01:03:35.290 [68365] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 01:03:35.291 [68365] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000000064.xlog'
+2024-06-04 01:03:35.291 [68365] main/104/interactive I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 01:03:35.291 [68365] main/104/interactive I> done `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 01:03:35.291 [68365] main/104/interactive I> Building secondary indexes in space '_bucket'...
+2024-06-04 01:03:35.291 [68365] main/104/interactive I> Adding 500 keys to TREE index 'status' ...
+2024-06-04 01:03:35.292 [68365] main/104/interactive I> Space '_bucket': done
+2024-06-04 01:03:35.292 [68365] main/104/interactive I> ready to accept requests
+2024-06-04 01:03:35.292 [68365] main/104/interactive I> synchronizing with 2 replicas
+2024-06-04 01:03:35.292 [68365] main/112/applier/replicator@localhost:3303 I> authenticated
+2024-06-04 01:03:35.292 [68365] main/104/interactive C> failed to synchronize with 1 out of 2 replicas
+2024-06-04 01:03:35.292 [68365] main/104/interactive I> entering orphan mode
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'instance_name' configuration option to "storage-002-b"
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'custom_proc_title' configuration option to "tarantool - storage-002-b"
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'log_nonblock' configuration option to false
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'replication' configuration option to ["replicator@localhost:3303","replicator@localhost:3304"]
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'replicaset_name' configuration option to "storage-002"
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'listen' configuration option to [{"uri":"localhost:3304"}]
+2024-06-04 01:03:35.292 [68365] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 03:02:10 2024
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'metrics' configuration option to {"labels":{"alias":"storage-002-b"},"include":["all"],"exclude":[]}
+2024-06-04 01:03:35.292 [68365] main/104/interactive/box.load_cfg I> set 'read_only' configuration option to true
+2024-06-04 01:03:35.293 [68365] main/112/applier/replicator@localhost:3303 I> subscribed
+2024-06-04 01:03:35.293 [68365] main/112/applier/replicator@localhost:3303 I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 01:03:35.293 [68365] main/111/main I> subscribed replica 752ef934-84c7-4b08-82da-e774c1d65ede at fd 29, aka [::1]:3304, peer of [::1]:59652
+2024-06-04 01:03:35.293 [68365] main/111/main I> remote vclock {1: 1064} local vclock {1: 1064}
+2024-06-04 01:03:35.293 [68365] main/106/gc I> wal/engine cleanup is resumed
+2024-06-04 01:03:35.293 [68365] main/112/applier/replicator@localhost:3303 I> RAFT: message {term: 1, state: follower} from 1
+2024-06-04 01:03:35.293 [68365] main/112/applier/replicator@localhost:3303 I> leaving orphan mode
+2024-06-04 01:03:35.294 [68365] relay/[::1]:59652/101/main I> recover from `/Users/r.sarvarov/projects/hlsoc/microservices/dialogs/var/lib/storage-002-b/00000000000000001064.xlog'
+2024-06-04 01:03:35.309 [68365] main/120/console/unix/: sio.c:315 !> getpeername: Invalid argument
+2024-06-04 01:03:35.310 [68365] main/104/interactive I> update replication_synchro_quorum = 2
+2024-06-04 01:03:35.312 [68365] main/107/checkpoint_daemon I> scheduled next checkpoint for Tue Jun  4 03:00:30 2024
+2024-06-04 01:03:35.346 [68365] main/104/interactive/tarantool.config I> sharding: apply storage config
+2024-06-04 01:03:35.346 [68365] main/104/interactive/vshard.storage I> Starting configuration of replica storage-002-b
+2024-06-04 01:03:35.346 [68365] main/104/interactive/vshard.storage I> Box configuration was skipped due to the 'manual' box_cfg_mode
+2024-06-04 01:03:35.346 [68365] main/125/vshard.state_watch/vshard.util I> instance_watch_f has been started
+2024-06-04 01:03:35.346 [68365] main/127/vshard.conn_man/vshard.util I> conn_manager_f has been started
+2024-06-04 01:03:35.354 [68365] main I> entering the event loop
